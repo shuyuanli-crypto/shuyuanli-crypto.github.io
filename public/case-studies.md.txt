@@ -1,0 +1,68 @@
+---
+title: "Case Studies"
+---
+
+## Case Studies
+
+A look at CRM and clienteling in action — starting with results I've delivered myself, followed by analysis of how leading luxury maisons approach client relationships today.
+
+---
+
+### ICICLE — From Fragmented Data to a 73K€ Quarter
+
+<a href="#" target="_blank" rel="noopener noreferrer" style="display: block; margin: 16px 0;">
+  <img src="/images/case-study-icicle-placeholder.jpg" alt="ICICLE case study slides" style="width: 100%; max-width: 400px; border-radius: 8px; display: block;" />
+</a>
+
+**The challenge:** ICICLE needed a CRM function built largely from the ground up — segmentation, database structure, and campaign planning were disconnected, making it hard to act on client data in any consistent way.
+
+**What I did:**
+- Designed and deployed an end-to-end CRM strategy, unifying segmentation, database architecture, and campaign planning
+- Managed the CRM ecosystem (Klaviyo, Shopify, CEGID) end to end, keeping automation and data integrity intact across tools
+- Ran systematic A/B testing and targeting optimization to sharpen personalization across campaigns
+- Built dashboards tracking CLV, retention, and engagement, giving the business a real-time read on what was working
+- Layered in clienteling: trained retail teams and managed a small team of ambassadors on VIC engagement
+
+**The result:** €73K in Q4 conversions — a +999% increase — driven by the combination of sharper personalization, disciplined testing, and better targeting, not any single tactic alone.
+
+**The takeaway:** The biggest lever wasn't a new tool — it was connecting the pieces (data, campaigns, retail clienteling) that were previously operating in isolation.
+
+---
+
+### Louis Vuitton — Clienteling as a Data Discipline, Not a Perk
+
+<a href="#" target="_blank" rel="noopener noreferrer" style="display: block; margin: 16px 0;">
+  <img src="/images/case-study-lv-placeholder.jpg" alt="Louis Vuitton case study slides" style="width: 100%; max-width: 400px; border-radius: 8px; display: block;" />
+</a>
+
+Louis Vuitton treats clienteling as core infrastructure rather than a VIP add-on. VIP preferences are tracked systematically and used to power invite-only events and cross-channel personalized recommendations, with LVMH investing heavily in unified data platforms across its maisons so that client insight travels consistently between digital and boutique touchpoints. Reporting from LVMH has pointed to stronger clienteling — using data and AI to personalize engagement over long relationship horizons — as a direct driver of resilience during softer luxury demand periods.
+
+**What brands can take from this:** Clienteling works best when it's backed by real infrastructure — a unified view of the client across channels — rather than treated as a manual, boutique-by-boutique effort.
+
+---
+
+### Tiffany & Co. — Clienteling Built Around Life Moments
+
+<a href="#" target="_blank" rel="noopener noreferrer" style="display: block; margin: 16px 0;">
+  <img src="/images/case-study-tiffany-placeholder.jpg" alt="Tiffany & Co case study slides" style="width: 100%; max-width: 400px; border-radius: 8px; display: block;" />
+</a>
+
+Tiffany's approach leans heavily on associates using data-informed clienteling to personalize outreach around key life moments — birthdays, engagements, anniversaries — alongside cultural and seasonal calendars specific to each market. Its CRM organization is structured around clear pillars: global segmentation and omnichannel personalization on one side, and a tight partnership with in-boutique clienteling teams on the other, so digital insight directly shapes what happens on the sales floor.
+
+**What brands can take from this:** The strongest luxury CRM programs don't separate "digital CRM" from "in-store clienteling" — they treat them as one continuous client journey, with data flowing both directions.
+
+---
+
+### Cartier — Clienteling as an Institutional Habit, Not a Tool
+
+<a href="#" target="_blank" rel="noopener noreferrer" style="display: block; margin: 16px 0;">
+  <img src="/images/case-study-cartier-placeholder.jpg" alt="Cartier case study slides" style="width: 100%; max-width: 400px; border-radius: 8px; display: block;" />
+</a>
+
+Cartier's client strategy centers on structured programs (such as its "MyClient" data capture approach) that ensure every boutique captures consistent, high-quality client information — not just transaction history, but the context needed to make a client feel remembered. Client Activation and Client Engagement are treated as distinct but connected pillars: one focused on reaching clients with the right content at the right time, the other on deepening the relationship once contact is made.
+
+**What brands can take from this:** Consistency of data capture across every boutique is what makes personalization believable at scale — a client should never have to reintroduce themselves.
+
+---
+
+*Have a CRM challenge you'd like a second opinion on? [Get in touch](/contact/) — I'd be glad to talk it through.*
