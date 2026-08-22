@@ -172,7 +172,7 @@ menu:
       name: Latest Discussion
       url: /forum/#latest
       weight: 20
- footer:
+  footer:
     - identifier: about
       name: About
       url: /about/
