@@ -172,6 +172,19 @@ menu:
       name: Latest Discussion
       url: /forum/#latest
       weight: 20
+ footer:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 10
+    - identifier: services
+      name: Services
+      url: /services/
+      weight: 20
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 30
 taxonomies:
   category: Categories
   tag: Tags
@@ -203,3 +216,4 @@ module:
   hugoVersion:
     extended: true
     min: "0.158.0"
+ 
