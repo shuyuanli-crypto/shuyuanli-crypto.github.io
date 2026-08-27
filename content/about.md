@@ -25,8 +25,8 @@ I've spent my career on nearly every side of the CRM table — as the analyst re
 
 Because I've sat in the analyst's chair, the campaign manager's chair, the system owner's chair, and the advisor's chair, I don't approach CRM as a single discipline — I see it as the connective layer between customer data, brand experience, and revenue. That's the lens Lens Strategy brings to every case study and recommendation on this site.
 
-<div class="mt-6">
-  <a href="https://www.linkedin.com/in/shuyuan-li-a57803231" target="_blank" rel="noopener noreferrer" class="inline-block px-5 py-2 rounded-md bg-black text-white text-sm font-medium hover:opacity-80 transition">
+<div style="margin-top: 24px;">
+  <a href="https://www.linkedin.com/in/shuyuan-li-a57803231" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 10px 20px; background-color: #1A1A1A; color: #FFFFFF; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 14px;">
     ESCP alumni? Let's connect on LinkedIn →
   </a>
 </div>

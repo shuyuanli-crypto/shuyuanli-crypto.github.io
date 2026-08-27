@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="wrap page forum-article">
+  <p class="eyebrow"><a href="/forum/">← Forum</a></p>
+  <h1>{{ .Title }}</h1>
+  <p class="meta">{{ .Date.Format "January 2, 2006" }}{{ with .Params.author }} · {{ . }}{{ end }}</p>
+  {{ .Content }}
+  {{ with .Params.tags }}
+  <p class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</p>
+  {{ end }}
+  <div class="discussion-placeholder">
+    <h3>Discussion</h3>
+    <p>Have a reaction or a different experience? Reach out on <a href="/contact/">Contact</a> or LinkedIn for now — a comments section for the Forum is next on the list.</p>
+  </div>
+</article>
+{{ end }}
