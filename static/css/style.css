@@ -69,11 +69,19 @@ img { max-width: 100%; height: auto; }
 }
 
 .brand {
+  display: flex;
+  align-items: center;
   font-family: var(--serif);
   font-weight: 600;
   font-size: 1.2rem;
   color: var(--ink);
   text-decoration: none;
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .nav-toggle { display: none; }
