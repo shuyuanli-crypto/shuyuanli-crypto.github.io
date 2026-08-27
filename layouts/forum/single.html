@@ -7,9 +7,23 @@
   {{ with .Params.tags }}
   <p class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</p>
   {{ end }}
-  <div class="discussion-placeholder">
+  <div class="discussion">
     <h3>Discussion</h3>
-    <p>Have a reaction or a different experience? Reach out on <a href="/contact/">Contact</a> or LinkedIn for now — a comments section for the Forum is next on the list.</p>
+    <script src="https://giscus.app/client.js"
+            data-repo="shuyuanli-crypto/shuyuanli-crypto.github.io"
+            data-repo-id="R_kgDOT-gqZQ"
+            data-category="General"
+            data-category-id="DIC_kwDOT-gqZc4DEUrn"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="en"
+            crossorigin="anonymous"
+            async>
+    </script>
   </div>
 </article>
 {{ end }}
