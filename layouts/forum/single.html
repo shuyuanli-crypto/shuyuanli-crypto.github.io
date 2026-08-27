@@ -1,14 +1,49 @@
-{{ define "main" }}
-<article class="wrap page forum-article">
-  <p class="eyebrow"><a href="/forum/">← Forum</a></p>
-  <h1>{{ .Title }}</h1>
-  <p class="meta">{{ .Date.Format "January 2, 2006" }}{{ with .Params.author }} · {{ . }}{{ end }}</p>
-  {{ .Content }}
+{{define "main"}}
+<article>
+  <header class="mb-4 bg-primary-600">
+    <span class="py-96">
+      <h1 class="py-16 text-5xl font-black text-center text-white capitalize">
+        {{ .Title }}
+      </h1>
+    </span>
+  </header>
+  <div class="mx-auto mt-8 mb-2 max-w-5xl">
+    <div class="px-6">
+      {{ with .Params.featured_image }}
+      {{ with resources.Get . }}
+      {{ $small := (.Resize "400x webp q80").RelPermalink }}
+      {{ $medium := (.Resize "550x webp q80").RelPermalink }}
+      {{ $large := (.Resize "900x webp q80").RelPermalink }}
+      {{ $featuredimage := (.Resize "1500x webp q80").RelPermalink }}
+      <img src="{{ $featuredimage }}" srcset="
+        {{- with $small -}}, {{.}} 400w{{- end -}}
+        {{- with $medium -}}, {{.}} 550w{{- end -}}
+        {{- with $large -}}, {{.}} 768w{{- end -}}
+        {{- with $featuredimage -}}, {{.}} 1100w{{- end -}}"
+           class="object-fill overflow-hidden rounded-lg ring-4 shadow-lg ring-zinc-300/40 dark:ring-gray-900/40 shadow-neutral-100/20 dark:shadow-neutral-800/40"
+           width="100%" alt="{{ .Params.title }}" />
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div class="flex gap-2 items-center px-6 pt-6 pb-2 mx-auto max-w-5xl text-sm text-gray-500 dark:text-gray-400">
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    {{ with .Params.author }}<span>&middot;</span><span>{{ . }}</span>{{ end }}
+  </div>
+  <!-- " {{.Content}}" pulls from the markdown content of the corresponding _index.md -->
+  <div class="px-6 pt-2 pb-16 mx-auto prose prose-h1:text-2xl dark:text-white">
+    {{.Content}}
+  </div>
   {{ with .Params.tags }}
-  <p class="tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</p>
+  <div class="flex flex-wrap gap-2 px-6 pb-8 mx-auto max-w-5xl">
+    {{ range . }}
+    <span class="inline-flex items-center px-2.5 py-0.5 text-sm font-medium text-gray-900 capitalize bg-gray-300 rounded-md dark:bg-gray-700 dark:text-gray-100">{{ . }}</span>
+    {{ end }}
+  </div>
   {{ end }}
-  <div class="discussion">
-    <h3>Discussion</h3>
+
+  <div class="px-6 py-12 mx-auto max-w-5xl border-t border-gray-200 dark:border-gray-800">
+    <h3 class="mb-6 text-2xl font-black text-gray-900 dark:text-white">Discussion</h3>
     <script src="https://giscus.app/client.js"
             data-repo="shuyuanli-crypto/shuyuanli-crypto.github.io"
             data-repo-id="R_kgDOT-gqZQ"
@@ -26,4 +61,4 @@
     </script>
   </div>
 </article>
-{{ end }}
+{{end}}
