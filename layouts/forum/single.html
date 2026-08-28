@@ -1,8 +1,16 @@
 {{define "main"}}
+<style>
+.ls-banner-wrap { padding-top: 3rem; padding-bottom: 3rem; }
+.ls-banner-heading { font-size: 1.875rem; font-family: 'Playfair Display', Georgia, serif; }
+@media (min-width: 768px) {
+  .ls-banner-wrap { padding-top: 4rem; padding-bottom: 4rem; }
+  .ls-banner-heading { font-size: 2.25rem; }
+}
+</style>
 <article>
   <header class="mb-4 bg-primary-600">
-    <span class="block py-12 md:py-16">
-      <h1 class="text-3xl md:text-4xl font-black text-center text-white capitalize" style="font-family: 'Playfair Display', Georgia, serif;">
+    <span class="block ls-banner-wrap">
+      <h1 class="font-black text-center text-white capitalize ls-banner-heading">
         {{ .Title }}
       </h1>
     </span>

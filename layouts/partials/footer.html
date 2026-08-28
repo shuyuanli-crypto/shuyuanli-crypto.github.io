@@ -1,14 +1,19 @@
-<!-- Footer section -->
-<footer class="bg-[#1A1A1A]">
+<style>
+.ls-footer { background-color: #1A1A1A; }
+.ls-footer a { color: #d1d5db; }
+.ls-footer a:hover { color: #B8925A; }
+.ls-footer .ls-copyright { color: #9ca3af; }
+</style>
+<footer class="ls-footer">
     <div class="overflow-hidden px-4 py-12 mx-auto max-w-md sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
         <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
             {{ range site.Menus.footer }}
             <div class="px-5 py-2">
-                <a href="{{ .URL | absLangURL }}" class="text-base text-gray-300 hover:text-[#B8925A]">{{ .Name }}</a>
+                <a href="{{ .URL | absLangURL }}" class="text-base">{{ .Name }}</a>
             </div>
             {{ end }}
         </nav>
-        <p class="mt-8 text-base text-center text-gray-400">&copy; {{ now.Format "2006" }}
+        <p class="mt-8 text-base text-center ls-copyright">&copy; {{ now.Format "2006" }}
             {{ .Site.Title }}. All rights reserved.</p>
     </div>
 </footer>
