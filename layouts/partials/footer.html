@@ -9,12 +9,12 @@
         <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
             {{ range site.Menus.footer }}
             <div class="px-5 py-2">
-                <a href="{{ .URL | absLangURL }}" class="text-base">{{ .Name }}</a>
+                <a href="{{ .URL | relURL }}" class="text-base">{{ .Name }}</a>
             </div>
             {{ end }}
         </nav>
         <p class="mt-8 text-base text-center ls-copyright">&copy; {{ now.Format "2006" }}
-            {{ .Site.Title }}. All rights reserved.</p>
+            {{ .Site.Title }}. {{ if eq .Site.Language.Lang "fr" }}Tous droits réservés.{{ else }}All rights reserved.{{ end }}</p>
     </div>
 </footer>
 

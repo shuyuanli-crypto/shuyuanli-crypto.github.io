@@ -10,6 +10,10 @@
 .ls-navbar .ls-dropdown-panel a { color: #1A1A1A; }
 .ls-navbar .ls-dropdown-panel a:hover,
 .ls-navbar .ls-dropdown-panel a:focus { color: #FFFFFF; background-color: #B8925A; }
+.ls-navbar .ls-lang-switch { color: #1A1A1A; }
+.ls-navbar .ls-lang-current { color: #B8925A; font-weight: 700; }
+.ls-navbar .ls-lang-link { color: #1A1A1A; text-decoration: none; }
+.ls-navbar .ls-lang-link:hover { color: #B8925A; }
 </style>
 <div class="sticky top-0 z-50 w-full ls-navbar">
     <div x-data="{ open: false }" class="flex flex-col px-4 mx-auto max-w-full md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
@@ -39,17 +43,35 @@
                 <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 z-30 mt-2 w-full rounded-md shadow-lg origin-top-right md:w-48">
                     <div class="px-2 py-2 rounded-md shadow ls-dropdown-panel">
                         {{ range (index site.Menus .Identifier) }}
-                        <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 focus:outline-none focus:shadow-outline" href="{{ .URL | absLangURL }}">{{- .Name -}}</a>
+                        <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 focus:outline-none focus:shadow-outline" href="{{ .URL | relURL }}">{{- .Name -}}</a>
                         {{ end }}
                     </div>
                 </div>
             </div>
             {{ else }}
-            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline ls-nav-link" href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}">
+            <a class="px-4 py-2 mt-2 text-sm font-semibold rounded-lg md:mt-0 md:ml-4 focus:outline-none focus:shadow-outline ls-nav-link" href="{{ .URL | relURL }}" title="{{ .Title | default .Name }}">
                 {{ .Name }}
             </a>
             {{ end }}
             {{ end }}
+            <div class="flex gap-1 items-center px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 ls-lang-switch">
+                {{ $translated := false }}
+                {{ if eq .Language.Lang "en" }}
+                    <span class="ls-lang-current">EN</span>
+                    <span>/</span>
+                    {{ range .Translations }}
+                        {{ if eq .Language.Lang "fr" }}{{ $translated = true }}<a href="{{ .RelPermalink }}" class="ls-lang-link">FR</a>{{ end }}
+                    {{ end }}
+                    {{ if not $translated }}<a href="/fr/" class="ls-lang-link">FR</a>{{ end }}
+                {{ else }}
+                    {{ range .Translations }}
+                        {{ if eq .Language.Lang "en" }}{{ $translated = true }}<a href="{{ .RelPermalink }}" class="ls-lang-link">EN</a>{{ end }}
+                    {{ end }}
+                    {{ if not $translated }}<a href="/" class="ls-lang-link">EN</a>{{ end }}
+                    <span>/</span>
+                    <span class="ls-lang-current">FR</span>
+                {{ end }}
+            </div>
         </nav>
     </div>
 </div>

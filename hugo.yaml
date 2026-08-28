@@ -1,8 +1,6 @@
 baseURL: 'https://lensstrategycrm.com/'
 title: Lens Strategy
-locale: en-us
 theme: tailbliss
-DefaultContentLanguage: en
 enableEmoji: true
 enableGitInfo: false
 enableRobotsTXT: true
@@ -12,6 +10,124 @@ pagination:
 darkmode_js:
   - assets/js/darkmode.js
 enableInlineShortcodes: true
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+
+languages:
+  en:
+    label: English
+    locale: en-us
+    weight: 1
+    menus:
+      main:
+        - identifier: prose
+          name: Prose
+          url: /prose/
+          weight: 10
+        - identifier: about
+          name: About Me
+          url: /about/
+          weight: 20
+        - identifier: services
+          pre: dropdown
+          name: Services
+          weight: 30
+        - identifier: forum
+          pre: dropdown
+          name: Forum
+          weight: 40
+        - identifier: contact
+          name: Contact
+          url: /contact/
+          weight: 50
+      services:
+        - identifier: strategy
+          name: CRM Strategy & Roadmap Design
+          url: /services/#crm-strategy--roadmap-design
+          weight: 10
+        - identifier: clienteling
+          name: Clienteling Program Design & Setup
+          url: /services/#clienteling-program-design--setup
+          weight: 20
+        - identifier: campaigns
+          name: Campaign Management
+          url: /services/#campaign-management
+          weight: 30
+        - identifier: audit
+          name: Client Data Audit & Analysis
+          url: /services/#client-data-audit--analysis
+          weight: 40
+      forum:
+        - identifier: allposts
+          name: All Posts
+          url: /forum/
+          weight: 10
+        - identifier: latest
+          name: Latest Discussion
+          url: /forum/#latest
+          weight: 20
+      footer:
+        - identifier: about
+          name: About
+          url: /about/
+          weight: 10
+        - identifier: services
+          name: Services
+          url: /services/
+          weight: 20
+        - identifier: contact
+          name: Contact
+          url: /contact/
+          weight: 30
+  fr:
+    label: Français
+    locale: fr-fr
+    weight: 2
+    menus:
+      main:
+        - identifier: prose
+          name: Prose
+          url: /fr/prose/
+          weight: 10
+        - identifier: about
+          name: À propos
+          url: /fr/about/
+          weight: 20
+        - identifier: services
+          name: Services
+          url: /fr/services/
+          weight: 30
+        - identifier: forum
+          pre: dropdown
+          name: Forum
+          weight: 40
+        - identifier: contact
+          name: Contact
+          url: /fr/contact/
+          weight: 50
+      forum:
+        - identifier: allposts
+          name: Tous les articles (EN)
+          url: /forum/
+          weight: 10
+        - identifier: latest
+          name: Dernière discussion (EN)
+          url: /forum/#latest
+          weight: 20
+      footer:
+        - identifier: about
+          name: À propos
+          url: /fr/about/
+          weight: 10
+        - identifier: services
+          name: Services
+          url: /fr/services/
+          weight: 20
+        - identifier: contact
+          name: Contact
+          url: /fr/contact/
+          weight: 30
 
 markup:
   goldmark:
@@ -123,68 +239,6 @@ params:
       enabled: true
       url: 'https://twitter.com/nusserstudios'
 
-
-menu:
-  main:
-    - identifier: prose
-      name: Prose
-      url: /prose/
-      weight: 10
-    - identifier: about
-      name: About Me
-      url: /about/
-      weight: 20
-    - identifier: services
-      pre: dropdown
-      name: Services
-      weight: 30
-    - identifier: forum
-      pre: dropdown
-      name: Forum
-      weight: 40
-    - identifier: contact
-      name: Contact
-      url: /contact/
-      weight: 50
-  services:
-    - identifier: strategy
-      name: CRM Strategy & Roadmap Design
-      url: /services/#crm-strategy--roadmap-design
-      weight: 10
-    - identifier: clienteling
-      name: Clienteling Program Design & Setup
-      url: /services/#clienteling-program-design--setup
-      weight: 20
-    - identifier: campaigns
-      name: Campaign Management
-      url: /services/#campaign-management
-      weight: 30
-    - identifier: audit
-      name: Client Data Audit & Analysis
-      url: /services/#client-data-audit--analysis
-      weight: 40
-  forum:
-    - identifier: allposts
-      name: All Posts
-      url: /forum/
-      weight: 10
-    - identifier: latest
-      name: Latest Discussion
-      url: /forum/#latest
-      weight: 20
-  footer:
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 10
-    - identifier: services
-      name: Services
-      url: /services/
-      weight: 20
-    - identifier: contact
-      name: Contact
-      url: /contact/
-      weight: 30
 taxonomies:
   category: Categories
   tag: Tags
