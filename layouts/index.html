@@ -1,0 +1,57 @@
+{{ define "main" }}
+<style>
+.ls-hero { background-color: #FAF6F1; }
+.ls-hero-tagline { color: #1A1A1A; }
+.ls-cta-btn { background-color: #B8925A; color: #FFFFFF; }
+.ls-cta-btn:hover { opacity: 0.85; }
+.ls-cta-btn-dark { background-color: #1A1A1A; color: #FFFFFF; }
+.ls-section-heading { font-family: 'Playfair Display', Georgia, serif; color: #1A1A1A; }
+.ls-forum-card { border: 1px solid #E5DDD0; background-color: #FAF6F1; border-radius: 12px; }
+.ls-forum-card:hover { border-color: #B8925A; }
+.ls-forum-summary { color: #555555; }
+</style>
+
+<section class="ls-hero">
+  <div class="mx-auto px-6 py-16 max-w-5xl text-center md:py-24">
+    <h1 class="text-4xl font-black md:text-5xl ls-section-heading">{{ .Site.Title }}</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg md:text-xl ls-hero-tagline">
+      {{ if eq .Site.Language.Lang "fr" }}
+      Cabinet de conseil en CRM et clienteling pour les marques de luxe et de beauté — fondé sur une expérience de terrain couvrant l'insight, l'exécution et la responsabilité complète de la relation client, de la personnalisation de masse à l'engagement individuel.
+      {{ else }}
+      A CRM and clienteling consultancy for luxury and beauty brands — built on hands-on experience across insight, execution, and full ownership of the client relationship, from mass personalization to one-to-one engagement.
+      {{ end }}
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center mt-8">
+      {{ if eq .Site.Language.Lang "fr" }}
+      <a href="/fr/services/" class="inline-block px-6 py-3 text-sm font-semibold rounded-md ls-cta-btn">Découvrir les services</a>
+      <a href="/fr/about/" class="inline-block px-6 py-3 text-sm font-semibold rounded-md ls-cta-btn-dark">À propos de moi</a>
+      {{ else }}
+      <a href="/services/" class="inline-block px-6 py-3 text-sm font-semibold rounded-md ls-cta-btn">Explore Services</a>
+      <a href="/about/" class="inline-block px-6 py-3 text-sm font-semibold rounded-md ls-cta-btn-dark">About Me</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if eq .Site.Language.Lang "en" }}
+{{ $forumPosts := sort (where site.RegularPages "Section" "forum") "Date" "desc" }}
+{{ with $forumPosts }}
+{{ $latest := index . 0 }}
+<section class="px-6 py-12 mx-auto max-w-5xl">
+  <h2 class="mb-6 text-2xl font-black md:text-3xl ls-section-heading">Latest from the Forum</h2>
+  <a href="{{ $latest.RelPermalink }}" class="block p-6 ls-forum-card">
+    <h3 class="mb-2 text-xl font-bold">{{ $latest.Title }}</h3>
+    <p class="text-sm ls-forum-summary">{{ $latest.Params.summary }}</p>
+  </a>
+</section>
+{{ end }}
+{{ end }}
+
+<section class="px-6 py-12 mx-auto max-w-5xl text-center">
+  {{ if eq .Site.Language.Lang "fr" }}
+  <p class="text-lg">Une problématique CRM à discuter ? <a href="/fr/contact/" class="font-semibold" style="color:#B8925A;">Contactez-moi →</a></p>
+  {{ else }}
+  <p class="text-lg">Have a CRM challenge to talk through? <a href="/contact/" class="font-semibold" style="color:#B8925A;">Get in touch →</a></p>
+  {{ end }}
+</section>
+{{ end }}
