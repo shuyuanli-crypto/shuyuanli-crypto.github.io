@@ -168,7 +168,7 @@ params:
   authorimage: ../assets/images/global/author.webp
   og_image: /images/tailbliss-cover.png
   moto: "Super Fast, and Flexible"
-  description: "A Hugo theme built with love, using TailwindCSS 3, Alpine.JS, and Hugo Pipes. Images are optimized for use with Hugo Pipes for WebP format."
+  description: "CRM and clienteling strategy for luxury and beauty brands, from insight and execution to full ownership of the client relationship."
   disable_theme_toggle: false
   disable_stay_uptodate: true
 
