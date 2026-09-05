@@ -1,7 +1,7 @@
 ---
 title: "How CRM Is Positioned Within the Marketing Department"
 slug: "how-crm-is-positioned-within-the-marketing-department"
-date: 2026-09-06
+date: 2026-09-05
 draft: false
 summary: "CRM rarely gets its own seat at the marketing table. It's usually buried under 'digital,' folded into 'loyalty,' or treated as just another channel. Here's why that positioning matters more than the org chart suggests, and what I think it should look like instead."
 author: "Shuyuan Li"
