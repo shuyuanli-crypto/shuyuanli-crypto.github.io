@@ -36,7 +36,7 @@ languages:
         - identifier: portfolio
           name: Portfolio
           url: /portfolio/
-          weight: 35
+          weight: 25
         - identifier: forum
           pre: dropdown
           name: Forum
@@ -109,7 +109,7 @@ languages:
         - identifier: portfolio
           name: Portfolio
           url: /fr/portfolio/
-          weight: 35
+          weight: 25
         - identifier: forum
           pre: dropdown
           name: Forum
