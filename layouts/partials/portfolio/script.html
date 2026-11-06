@@ -100,4 +100,41 @@
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
 })();
+
+(function () {
+  var root = document.getElementById('pf');
+  if (!root) return;
+  // email viewer (click to see the whole email)
+  var mailBox = root.querySelector('.pf-mails');
+  if (mailBox) {
+    var openLabel = mailBox.getAttribute('data-open') || 'View full email';
+    var closeLabel = mailBox.getAttribute('data-close') || 'Close';
+    var viewer = document.createElement('div');
+    viewer.className = 'pf-viewer'; viewer.setAttribute('role', 'dialog'); viewer.setAttribute('aria-modal', 'true');
+    viewer.innerHTML = '<button class="pf-viewer-close" type="button" aria-label="' + closeLabel + '">&times;</button><div class="pf-viewer-scroll"><img alt=""><p class="pf-viewer-cap"></p></div>';
+    document.body.appendChild(viewer);
+    var vImg = viewer.querySelector('img'), vCap = viewer.querySelector('.pf-viewer-cap'), vScroll = viewer.querySelector('.pf-viewer-scroll'), vClose = viewer.querySelector('.pf-viewer-close'), lastFocus = null;
+    function openViewer(fig) {
+      var img = fig.querySelector('img'), cap = fig.querySelector('figcaption b');
+      vImg.src = img.src; vImg.alt = img.alt; vCap.textContent = cap ? cap.textContent : '';
+      vScroll.scrollTop = 0; lastFocus = document.activeElement;
+      viewer.classList.add('is-open'); document.documentElement.classList.add('pf-lock'); vClose.focus();
+    }
+    function closeViewer() {
+      viewer.classList.remove('is-open'); document.documentElement.classList.remove('pf-lock');
+      if (lastFocus) lastFocus.focus();
+    }
+    root.querySelectorAll('.pf-mail').forEach(function (fig) {
+      var frame = fig.querySelector('.pf-mail-frame');
+      var hint = document.createElement('button');
+      hint.type = 'button'; hint.className = 'pf-mail-hint'; hint.textContent = openLabel;
+      frame.appendChild(hint);
+      frame.addEventListener('click', function () { openViewer(fig); });
+    });
+    vClose.addEventListener('click', closeViewer);
+    viewer.addEventListener('click', function (e) { if (e.target === viewer || e.target === vScroll) closeViewer(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && viewer.classList.contains('is-open')) closeViewer(); });
+  }
+
+})();
 </script>

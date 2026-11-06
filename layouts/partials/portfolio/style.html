@@ -194,6 +194,19 @@
   .pf-mail-frame { height: 440px; }
 }
 
+/* email viewer */
+.pf-mail-frame { cursor: zoom-in; }
+.pf-mail-hint { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 2; padding: 8px 16px; border-radius: 999px; border: 0; background: rgba(26,26,26,.82); color: #fff; font: 600 12.5px 'Inter', sans-serif; letter-spacing: .02em; white-space: nowrap; cursor: pointer; transition: opacity .3s, transform .3s; }
+@media (hover: hover) { .pf-mail-hint { opacity: 0; transform: translate(-50%, 6px); } .pf-mail-frame:hover .pf-mail-hint, .pf-mail-hint:focus-visible { opacity: 1; transform: translateX(-50%); } }
+.pf-viewer { position: fixed; inset: 0; z-index: 100; background: rgba(18,18,18,.82); display: flex; justify-content: center; opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s; }
+.pf-viewer.is-open { opacity: 1; visibility: visible; }
+.pf-viewer-scroll { width: 100%; max-width: 680px; height: 100%; overflow-y: auto; padding: 64px 16px 40px; box-sizing: border-box; overscroll-behavior: contain; }
+.pf-viewer-scroll img { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+.pf-viewer-cap { color: #EDE6DC; font: 500 14px/1.5 'Inter', sans-serif; margin: 16px 4px 0; text-align: center; }
+.pf-viewer-close { position: fixed; top: 16px; right: 16px; z-index: 101; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #FAF6F1; color: #1A1A1A; font-size: 22px; line-height: 44px; cursor: pointer; }
+.pf-viewer-close:hover { background: #B8925A; color: #fff; }
+html.pf-lock { overflow: hidden; }
+
 /* outro */
 .pf-outro { background: var(--pf-ink); color: #FAF6F1; text-align: center; padding: 96px 0; margin-top: 60px; }
 .dark .pf-outro { background: #1C1A17; }
