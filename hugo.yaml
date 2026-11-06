@@ -33,6 +33,10 @@ languages:
           pre: dropdown
           name: Services
           weight: 30
+        - identifier: portfolio
+          name: Portfolio
+          url: /portfolio/
+          weight: 35
         - identifier: forum
           pre: dropdown
           name: Forum
@@ -76,6 +80,10 @@ languages:
           name: Services
           url: /services/
           weight: 20
+        - identifier: portfolio
+          name: Portfolio
+          url: /portfolio/
+          weight: 25
         - identifier: contact
           name: Contact
           url: /contact/
@@ -98,6 +106,10 @@ languages:
           name: Services
           url: /fr/services/
           weight: 30
+        - identifier: portfolio
+          name: Portfolio
+          url: /fr/portfolio/
+          weight: 35
         - identifier: forum
           pre: dropdown
           name: Forum
@@ -124,6 +136,10 @@ languages:
           name: Services
           url: /fr/services/
           weight: 20
+        - identifier: portfolio
+          name: Portfolio
+          url: /fr/portfolio/
+          weight: 25
         - identifier: contact
           name: Contact
           url: /fr/contact/

@@ -1,0 +1,5 @@
+{{ define "main" }}
+{{ partial "portfolio/style.html" . }}
+{{ if eq .Site.Language.Lang "fr" }}{{ partial "portfolio/body-fr.html" . }}{{ else }}{{ partial "portfolio/body-en.html" . }}{{ end }}
+{{ partial "portfolio/script.html" . }}
+{{ end }}
