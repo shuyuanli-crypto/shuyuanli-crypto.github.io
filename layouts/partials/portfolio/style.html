@@ -26,7 +26,7 @@
   --pf-wine: #D07A86;
 }
 .pf h1, .pf h2, .pf h3 { font-family: 'Playfair Display', Georgia, serif; text-wrap: balance; }
-.pf p, .pf li { text-wrap: pretty; }
+.pf p, .pf li, .pf figcaption, .pf-stat > span { text-wrap: pretty; }
 .pf-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
 /* progress bar */
@@ -169,6 +169,30 @@
 .pf.js-on .pf-hero .pf-pipe li { opacity: 0; animation: pf-word .7s var(--pf-ease) forwards; }
 .pf.js-on .pf-hero .pf-pipe::after { animation: pf-fill 2.2s .9s var(--pf-ease) both; }
 @keyframes pf-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* ICICLE email showcase */
+.pf-mails { margin-top: 40px; padding: 56px 0 8px; border-top: 1px solid var(--pf-line); }
+.pf-mails-head { max-width: 640px; }
+.pf-mails-head h3 { font-size: clamp(1.45rem, 2.6vw, 2rem); line-height: 1.2; margin: 10px 0 10px; }
+.pf-mails-head p { color: var(--pf-muted); line-height: 1.65; margin: 0; }
+.pf-mail-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 36px; }
+.pf-mail { margin: 0; }
+.pf-mail-frame { position: relative; height: 560px; border-radius: 16px; overflow-y: auto; background: var(--pf-cream); border: 1px solid var(--pf-line); box-shadow: 0 18px 40px -24px rgba(26,26,26,.35); }
+.pf-mail-frame img { display: block; width: 100%; height: auto; will-change: transform; }
+.pf.js-on .pf-mail-frame { overflow: hidden; }
+.pf-mail-frame::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 56px; background: linear-gradient(transparent, rgba(0,0,0,.06)); pointer-events: none; }
+.pf-mail figcaption { margin-top: 14px; }
+.pf-mail figcaption b { display: block; font-size: 14.5px; font-weight: 600; color: var(--pf-ink); }
+.pf-mail figcaption span { display: block; margin-top: 4px; font-size: 13.5px; line-height: 1.5; color: var(--pf-muted); }
+.pf.js-on .pf-mail { opacity: 0; transform: translateY(40px); transition: opacity .9s var(--pf-ease), transform .9s var(--pf-ease); }
+.pf.js-on .pf-mail-row.is-in .pf-mail { opacity: 1; transform: none; }
+.pf.js-on .pf-mail-row.is-in .pf-mail:nth-child(2) { transition-delay: .15s; }
+.pf.js-on .pf-mail-row.is-in .pf-mail:nth-child(3) { transition-delay: .3s; }
+@media (max-width: 899px) {
+  .pf-mail-row { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; margin-right: -24px; padding-right: 24px; padding-bottom: 8px; }
+  .pf-mail { flex: 0 0 76%; scroll-snap-align: start; }
+  .pf-mail-frame { height: 440px; }
+}
 
 /* outro */
 .pf-outro { background: var(--pf-ink); color: #FAF6F1; text-align: center; padding: 96px 0; margin-top: 60px; }

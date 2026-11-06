@@ -78,6 +78,25 @@
       rail.classList.toggle('is-on', first.getBoundingClientRect().top < y && outro.getBoundingClientRect().top > y);
     }
   }
+  // email showcase: each email scrolls through its frame as the page scrolls
+  var mailRow = root.querySelector('.pf-mail-row');
+  if (mailRow) revIO.observe(mailRow);
+  var mails = Array.prototype.slice.call(root.querySelectorAll('.pf-mail-frame'));
+  function moveMails() {
+    if (!mails.length) return;
+    var vh = window.innerHeight, r = mailRow.getBoundingClientRect();
+    if (r.bottom < -200 || r.top > vh + 200) return;
+    var p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+    mails.forEach(function (f, i) {
+      var img = f.querySelector('img'); if (!img) return;
+      var max = img.offsetHeight - f.clientHeight; if (max <= 0) return;
+      var k = Math.min(1, Math.max(0, (p - 0.08 - i * 0.04) / 0.8));
+      img.style.transform = 'translateY(' + (-max * k).toFixed(1) + 'px)';
+    });
+  }
+  window.addEventListener('scroll', function () { requestAnimationFrame(moveMails); }, { passive: true });
+  window.addEventListener('resize', moveMails);
+  window.addEventListener('load', moveMails);
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
 })();
